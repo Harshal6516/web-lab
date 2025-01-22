@@ -1,0 +1,147 @@
+body {
+    height: 100vh;
+    margin: 0;
+    background-color: beige;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative; 
+}
+
+h1, h2 {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    margin: 0;
+}
+
+.animated-text {
+    font-size: 24px;
+    color: #3498db;
+    font-weight: bold;
+    animation: fontAnimation 2s infinite alternate ease-in-out;
+}
+
+@keyframes fontAnimation {
+    0% {
+        font-size: 24px;
+        color: #3498db;
+    }
+    50% {
+        font-size: 48px;
+        color: #e74c3c;
+    }
+    100% {
+        font-size: 24px;
+        color: #2ecc71;
+        font-family: monospace;
+    }
+}
+
+.triangle {
+    width: 0;
+    height: 0;
+	position:relative;
+	margin-right:500px;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 100px solid #3498db;
+    animation: bounceAndRotate 3s infinite ease-in-out;
+}
+
+
+@keyframes bounceAndRotate {
+    0% {
+        transform: translateY(0) rotate(0deg);
+    }
+    25% {
+        transform: translateY(-50px) rotate(120deg);
+    }
+    50% {
+        transform: translateY(0) rotate(240deg);
+    }
+    75% {
+        transform: translateY(-30px) rotate(360deg);
+    }
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+}
+
+.ball {
+    width: 80px;
+    height: 80px;
+    background-color: #3498db;
+    border-radius: 50%;
+    margin-top: 30px;
+	position:relative;
+    animation: bounce 3s infinite ease-in-out, changeColor 3s infinite ease-in-out;
+}
+
+@keyframes bounce {
+    0% {
+        transform: translateY(0) scaleX(1);
+    }
+    25% {
+        transform: translateY(-150px) scaleX(1.2);
+    }
+    50% {
+        transform: translateY(0) scaleX(1);
+    }
+    75% {
+        transform: translateY(-100px) scaleX(0.8);
+    }
+    100% {
+        transform: translateY(0) scaleX(1);
+    }
+}
+
+@keyframes changeColor {
+    0% {
+        background-color: #3498db;
+        border-radius: 50%;
+    }
+    25% {
+        background-color: #e74c3c;
+        border-radius: 30%;
+    }
+    50% {
+        background-color: #2ecc71;
+        border-radius: 50%;
+    }
+    75% {
+        background-color: #f39c12;
+        border-radius: 40%;
+    }
+    100% {
+        background-color: #3498db;
+        border-radius: 50%;
+    }
+}
+.square {
+    width: 100px;
+    height: 100px;
+    background-color: #3498db;
+    position: relative;
+    animation: moveInTriangle 3s infinite ease-in-out;
+}
+
+
+@keyframes moveInTriangle {
+    0% {
+        transform: translate(0, 0);
+    }
+    33% {
+        transform: translate(200px, 0);
+		background-color:red;
+    }
+    66% {
+        transform: translate(100px, 173px); 
+		background-color:yellow;
+    }
+    100% {
+        transform: translate(0, 0); 
+    }
+}
